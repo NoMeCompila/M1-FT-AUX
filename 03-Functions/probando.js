@@ -1,8 +1,3 @@
-function timeConversion(time){
-// dada la hora en formato hora AM/PM , convertir a la hora militar (24-horas).
-// Recordar: las 12:00:00AM en un reloj de 12 horas son las 00:00:00 en un reloj de 24 horas
-// las 12:00:00PM en un reloj de 12 horas son las 12:00:00 en un reloj de 24 horas 
-    
 //divide el string en horas min y seg
 function hoMinSec(h){
     let splited = h.split(":"); 
@@ -11,13 +6,12 @@ function hoMinSec(h){
 
 //verifica que sea válida la entrada
 function invalidHour(time){
-    let longitud = hoMinSec(time).length; 
     if(time === "" || longitud !== 3) return false;
     //variables que contienen la  hora por partes
     let horas = Number(hoMinSec(time)[0],10); 
     let minutos = Number(hoMinSec(time)[1],10);  
     let segundos = Number(hoMinSec(time)[2].slice(0,2),10); 
-    
+    let longitud = hoMinSec(time).length; 
     
     //topdos los casos no válidos
     if(horas > 12) return false; 
@@ -84,10 +78,6 @@ function timeConversion(time){
     }
 }
 
-
-    return timeConversion(time);
-}
-
-module.exports = {
-    timeConversion
-}
+//testeando ando
+var t = "";
+console.log(timeConversion(t));
